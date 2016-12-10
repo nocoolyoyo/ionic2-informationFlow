@@ -1,0 +1,23 @@
+$categories: (
+ ionic: color($colors, primary),
+ 头条: #AC282B,
+工商联: #FD8B2D,
+商会: #FED035,
+人物: #69BB7B,
+投资福建: #3BC7C4,
+公益: #B16BE3,
+商学院: #6600CC,
+);
+
+@function auxiliary-categories() {
+  @return map-remove($categories);
+}
+
+page-news {
+  @each $label, $value in auxiliary-categories() {
+   ion-item-sliding[label=#{$label}] ion-label {
+     border-left: 2px solid $value;
+     padding-left: 10px;
+   }
+  }
+}

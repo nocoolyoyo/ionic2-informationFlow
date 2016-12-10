@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">取消</button>
+    </ion-buttons>
+
+    <ion-title>
+     标签过滤
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="applyFilters()" strong>完成</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="outer-content">
+
+  <ion-list>
+    <ion-list-header>标签</ion-list-header>
+
+    <ion-item *ngFor="let label of labels" [attr.label]="label.name">
+      <span item-left class="dot"></span>
+      <ion-label>{{label.name}}</ion-label>
+      <ion-toggle [(ngModel)]="label.isChecked" color="secondary"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <button ion-item (click)="resetFilters()" detail-none class="reset-filters">
+      重置
+    </button>
+  </ion-list>
+
+</ion-content>

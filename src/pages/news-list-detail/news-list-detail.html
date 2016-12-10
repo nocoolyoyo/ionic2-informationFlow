@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Session</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{list.name}}</h1>
+
+  <h4 *ngFor="let speaker of list.speakers">
+    {{speaker.name}}
+  </h4>
+
+  <p>
+    {{list.timeStart}} - {{list.timeEnd}}
+  </p>
+
+  <p>{{list.location}}</p>
+
+  <p>{{list.description}}</p>
+</ion-content>
